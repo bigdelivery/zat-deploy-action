@@ -1,0 +1,13 @@
+# action.yml
+name: 'ZAT Build and Deploy'
+description: 'Builds a ZAT package and deploys it.'
+inputs:
+outputs:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.subdomain }}
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.app-id }}
